@@ -25,19 +25,19 @@ class ResourcesController < ApplicationController
   # POST /resources
   # POST /resources.json
   # This gets called if resources are enterd into a form by user
-  def create
-    @resource = Resource.new(resource_params)
+  # def create
+  #   @resource = Resource.new(resource_params)
 
-    respond_to do |format|
-      if @resource.save
-        format.html { redirect_to @resource, notice: 'Resource was successfully created.' }
-        format.json { render :show, status: :created, location: @resource }
-      else
-        format.html { render :new }
-        format.json { render json: @resource.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @resource.save
+  #       format.html { redirect_to @resource, notice: 'Resource was successfully created.' }
+  #       format.json { render :show, status: :created, location: @resource }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @resource.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /resources/1
   # PATCH/PUT /resources/1.json
@@ -71,6 +71,6 @@ class ResourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      params.require(:resource).permit(:name, :url, :type, :description, :rank, :comment_ids)
+      params.require(:resource).permit(:name, :url, :description, :rank, :comment_ids)
     end
 end

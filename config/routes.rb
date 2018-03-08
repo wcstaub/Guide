@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'show_all_subjects' => 'subjects#index'
   get 'show_all_resources' => 'resources#index'
   get 'sessions_new' => 'sessions#new'
-  get 'show_resources/:id' => 'subjects#show_resources', as: 'show_resources'
+  get 'show_resources/:name' => 'subjects#show_resources', as: 'show_resources'
 	get 'signup' =>'users#new'
 	get 'login' =>'sessions#new'
 	get 'logout' =>'sessions#destroy'

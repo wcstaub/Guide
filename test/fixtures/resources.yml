@@ -3,7 +3,6 @@
 one:
   name: MyString
   url: MyString
-  type: 
   description: MyText
   rank: 1
   comment_ids: MyText
@@ -11,7 +10,6 @@ one:
 two:
   name: MyString
   url: MyString
-  type: 
   description: MyText
   rank: 1
   comment_ids: MyText

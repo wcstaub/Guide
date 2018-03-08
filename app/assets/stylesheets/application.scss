@@ -19,10 +19,9 @@
 @import url('https://fonts.googleapis.com/css?family=Galindo');
 
 .overlay {
-      color: white;
-      background: rgba(215, 221, 229, 0.1);
-     // background: rgba( 39, 40, 42, 0.8);
-    // background: rgba(0,0,0,0.5);
+      color: black;
+      // background: rgba(255, 166, 77, 1);
+      background: rgba(255, 140, 26, 1);
 }
 
 .bar{
@@ -32,6 +31,12 @@
 .logo {
     height: 84px;
     width: 108px;
+}
+
+.iconLg {
+    border-radius: .5em;
+    height: 120px;
+    width:120px;
 }
 
 .icon {
@@ -55,7 +60,7 @@
 .welcome_msg {
     font-family: 'galindo', cursive;
     // color: rgba(109, 153, 8, 1);
-    color: rgba(247, 144, 40, 1);
+    color: rgba(247, 144, 40, 0.8);
 }
 
 .puzzle{

@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /subjects
   # GET /subjects.json
   def index
@@ -26,15 +26,15 @@ class SubjectsController < ApplicationController
   def create
     @subject = Subject.new(subject_params)
 
-    respond_to do |format|
-      if @subject.save
-        format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
-        format.json { render :show, status: :created, location: @subject }
-      else
-        format.html { render :new }
-        format.json { render json: @subject.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @subject.save
+    #     format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
+    #     format.json { render :show, status: :created, location: @subject }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @subject.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /subjects/1
@@ -67,8 +67,9 @@ class SubjectsController < ApplicationController
   end
 
   def show_resources
-    @current_subject = Subject.find(params[:id])
+    @current_subject = Subject.where(name: params[:name])
   end
+
 
 ##########################################################################
  

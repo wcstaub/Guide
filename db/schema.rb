@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308025940) do
+ActiveRecord::Schema.define(version: 20180308064001) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20180308025940) do
   create_table "resources", force: :cascade do |t|
     t.string "name"
     t.string "url"
-    t.string "type"
     t.text "description"
     t.integer "rank"
     t.text "comment_ids"
