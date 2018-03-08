@@ -1,6 +1,8 @@
-class SessionController < ApplicationController
-	def new
-	end
+class SessionsController < ApplicationController
+  def new
+  end
+  def new
+end
 
 	def create
 	  user = User.find_by_email(params[:email])
@@ -9,9 +11,7 @@ class SessionController < ApplicationController
 	    redirect_to root_url, notice: "Logged in!"
 	  else
 	    flash.now.alert = "Email or password is invalid"
-	    # render "new"
-	    # comment in Railscast
-	    redirect_to login_url
+	    render "new"
 	  end
 	end
 
@@ -19,4 +19,5 @@ class SessionController < ApplicationController
 	  session[:user_id] = nil
 	  redirect_to root_url, notice: "Logged out!"
 	end
+
 end
