@@ -26,9 +26,9 @@
 
     <div class="collapse navbar-collapse navbar-menubuilder">
         <ul class="nav navbar-nav navbar-left">
-          <li class="<%= 'active' if controller.controller_name == 'subjects' %>"> <%= link_to "Subjects", show_subject_list_path%>
+          <li class="<%= 'active' if controller.controller_name == 'subjects' %>"> <%= link_to "Subjects", show_all_subjects_path %>
           </li>  
-          <li class="<%= 'active' if controller.controller_name == 'resources' %>"> <%= link_to "Resources", show_resource_list_path%>
+          <li class="<%= 'active' if controller.controller_name == 'resources' %>"> <%= link_to "Resources", show_all_resources_path%>
           </li> 
           <li class="<%= 'active' if controller.controller_name == 'sessions' %>"> <%= link_to "About", about_path%>
           </li> 
