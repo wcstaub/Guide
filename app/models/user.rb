@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-	has_secure_password
+	
+	serialize :comment_ids
+	has_many :comments
 	  
 	attr_accessor :email, :password, :password_confirmation
 	  

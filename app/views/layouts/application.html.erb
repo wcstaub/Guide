@@ -8,15 +8,51 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-	<% if current_user %>
-	  Logged in as <%= current_user.email %>.
-	  <%= link_to "Log Out", logout_path %>
-	<% else %>
-	  <%= link_to "Sign Up", signup_path %> or
-	  <%= link_to "Log In", login_path %>
-	<% end %>
-	
-  <body>
-    <%= yield %>
+	<body class="code">
+
+   <div id="custom-bootstrap-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+
+    <div class="navbar-header">
+        <i class="navbar-brand"><%= image_tag("TTSorange.png", class: "img-responsive logo") %></i>
+       
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar bar"></span>
+        <span class="icon-bar bar"></span>
+        <span class="icon-bar bar"></span>
+        </button>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-menubuilder">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="<%= 'active' if controller.controller_name == 'subjects' %>"> <%= link_to "Subjects", show_subject_list_path%>
+          </li>  
+          <li class="<%= 'active' if controller.controller_name == 'resources' %>"> <%= link_to "Resources", show_resource_list_path%>
+          </li> 
+          <li class="<%= 'active' if controller.controller_name == 'sessions' %>"> <%= link_to "About", about_path%>
+          </li> 
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+             <% if current_user %>
+                Logged in as <%= current_user.email %>.
+                <li><%= link_to "Log Out", logout_path %></li>
+              <% else %>
+                <li><%= link_to "Sign Up", signup_path %></li>
+                <li><%= link_to "Log In",login_path %></li>
+              <% end %>
+              <% flash.each do |name, msg| %>
+                <%= content_tag :div, msg, id: "flash_#{name}" %>
+              <% end %>
+        </ul>     
+      </div>
+    </div>
+  </div>
+
+<br><br><br>
+
+    <div class = "container">
+      <%= yield %>
+    </div>
   </body>
 </html>

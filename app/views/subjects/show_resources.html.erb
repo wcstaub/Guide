@@ -1,0 +1,21 @@
+<!-- views/subjects/show_resources.html.erb -->
+<!-- displays all resource pertaining to a subject -->
+<p> <%= controller.controller_name%>:show_resources</p>
+<div class= "container overlay">
+	<div class="row">
+		<div class="col-sm-6">
+			<h2><%= image_tag(@current_subject.icon, class: "img-responsive icon") %>  All Resources for: <%=current_subject.name %></h2>
+		</div>
+	</div>
+	<br><br>
+	<!-- Iterate over the has many through table to find related resources -->
+	<% @subject.resources.each do |r| %> 
+		<p>
+		  <%= link_to r.url r.url %> 
+		</p>
+	<% end %>
+</div>	
+
+
+
+
