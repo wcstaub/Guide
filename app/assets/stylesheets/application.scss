@@ -21,29 +21,31 @@
 .overlay {
       color: black;
       // background: rgba(255, 166, 77, 1);
-      background: rgba(255, 140, 26, 1);
+      background: rgba(255, 140, 26, 0.7);
 }
 
 .bar{
     color: white;
 }
 
+
 .logo {
     height: 84px;
     width: 108px;
 }
 
-.iconLg {
+.iconSm {
     border-radius: .5em;
-    height: 120px;
-    width:120px;
+    height: 100px;
+    width:100px;
 }
 
-.icon {
+.iconLg {
     border-radius: .5em;
-    height: 75px;
-    width: 75px;
+    height: 128px;
+    width:128px;
 }
+
 
 .item {
       max-width: 80%;
@@ -59,7 +61,6 @@
 
 .welcome_msg {
     font-family: 'galindo', cursive;
-    // color: rgba(109, 153, 8, 1);
     color: rgba(247, 144, 40, 0.8);
 }
 
